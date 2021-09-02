@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://thunkable.github.io/webviewer-extension/thunkableWebviewerExtension.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+<p>Click the button to encode a URI.</p>
+
+<p id="demo"></p>
+
+<script>
+ThunkableWebviewerExtension.receiveMessage(function(message) {
+  // Do something with your message
+  var uri =message;
+  var res = encodeURI(uri);
+  ThunkableWebviewerExtension.postMessage(res);
+}
+</script>
+
+</body>
+</html>
